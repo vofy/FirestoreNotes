@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@+id/bottom_navigation_notes">
+
+        <fragment
+            android:id="@+id/bottom_navigation_notes"
+            android:name="tech.vofy.firestorenotes.ui.mainActivity.notes.NotesFragment"
+            android:label="@string/title_notes"
+            tools:layout="@layout/notes_fragment" />
+        <fragment
+            android:id="@+id/bottom_navigation_tasks"
+            android:name="tech.vofy.firestorenotes.ui.mainActivity.notes.NotesFragment"
+            android:label="@string/title_tasks"
+            tools:layout="@layout/notes_fragment" />
+
+</navigation>
