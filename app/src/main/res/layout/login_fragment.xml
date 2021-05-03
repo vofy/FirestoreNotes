@@ -6,6 +6,12 @@
         <variable
             name="viewModel"
             type="tech.vofy.firestorenotes.ui.mainActivity.login.LoginViewModel" />
+        <variable
+            name="email"
+            type="String" />
+        <variable
+            name="password"
+            type="String" />
     </data>
 
     <LinearLayout
@@ -33,7 +39,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/email" />
+                    android:hint="@string/email"
+                    android:text="@={ email }" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -49,7 +56,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/password" />
+                    android:hint="@string/password"
+                    android:text="@={ password }" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="@string/login"
-                android:onClick="@{ () -> viewModel::login() }"/>
+                android:onClick="@{ (view) -> viewModel.Login(view, email, password) }"/>
 
             <Space
                 android:layout_width="16dp"

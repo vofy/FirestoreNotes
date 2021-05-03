@@ -1,6 +1,7 @@
 package tech.vofy.firestorenotes.ui.mainActivity.login;
 
 import android.util.Log;
+import android.view.View;
 
 import androidx.databinding.BindingAdapter;
 import androidx.lifecycle.ViewModel;
@@ -14,9 +15,11 @@ import static android.service.controls.ControlsProviderService.TAG;
 public class LoginViewModel extends ViewModel {
 
     private FirebaseAuth mAuth;
+    public String email;
+    public String password;
 
-    @BindingAdapter("viewModel")
-    private void login() {
+    @BindingAdapter("app:login")
+    public void Login(View view, String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener((Executor) this, task -> {
                     if (task.isSuccessful()) {

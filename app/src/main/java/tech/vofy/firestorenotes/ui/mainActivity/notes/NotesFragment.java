@@ -11,18 +11,18 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.firestorenotes.R;
-import com.example.firestorenotes.databinding.NotesFragmentBinding;
+import com.example.firestorenotes.databinding.MainNotesFragmentBinding;
 
 public class NotesFragment extends Fragment {
 
-    private NotesFragmentBinding binding;
+    private MainNotesFragmentBinding binding;
     private NotesViewModel mViewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = NotesFragmentBinding.inflate(getLayoutInflater());
+        binding = MainNotesFragmentBinding.inflate(getLayoutInflater());
 
-        return inflater.inflate(R.layout.notes_fragment, container, false);
+        return inflater.inflate(R.layout.main_notes_fragment, container, false);
     }
 
     @Override
