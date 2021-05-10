@@ -1,4 +1,4 @@
-package tech.vofy.firestorenotes.ui.noteEditorActivity.noteEditor;
+package tech.vofy.firestorenotes.ui.editorActivity.taskEditor;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -14,27 +14,24 @@ import android.view.ViewGroup;
 
 import com.example.firestorenotes.R;
 
+public class taskEditorFragment extends Fragment {
 
-public class NoteEditorFragment extends Fragment {
+    private TaskEditorViewModel mViewModel;
 
-    private NoteEditorViewModel mViewModel;
-
-    public static NoteEditorFragment newInstance() {
-        return new NoteEditorFragment();
+    public static taskEditorFragment newInstance() {
+        return new taskEditorFragment();
     }
 
-    @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.note_editor_fragment, container, false);
+        return inflater.inflate(R.layout.task_editor_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(NoteEditorViewModel.class);
-        // TODO: Use the ViewModel
+        mViewModel = new ViewModelProvider(this).get(TaskEditorViewModel.class);
     }
 
 }

@@ -1,4 +1,4 @@
-package tech.vofy.firestorenotes.ui.noteEditorActivity.noteEditor;
+package tech.vofy.firestorenotes.ui.editorActivity.noteEditor;
 
 import androidx.lifecycle.ViewModel;
 

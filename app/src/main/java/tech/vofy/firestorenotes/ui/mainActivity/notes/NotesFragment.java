@@ -9,27 +9,31 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firestorenotes.R;
-import com.example.firestorenotes.databinding.MainNotesFragmentBinding;
+import com.example.firestorenotes.databinding.NotesFragmentBinding;
 
 public class NotesFragment extends Fragment {
 
-    private MainNotesFragmentBinding binding;
-    private NotesViewModel mViewModel;
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = MainNotesFragmentBinding.inflate(getLayoutInflater());
+        com.example.firestorenotes.databinding.NotesFragmentBinding binding = NotesFragmentBinding.inflate(inflater);
 
-        return inflater.inflate(R.layout.main_notes_fragment, container, false);
+        NotesRecyclerViewAdapter notesRecyclerViewAdapter = new NotesRecyclerViewAdapter(getContext());
+
+        RecyclerView recyclerView = binding.notesRecyclerView;
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(notesRecyclerViewAdapter);
+
+        return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(NotesViewModel.class);
-        // TODO: Use the ViewModel
+        NotesViewModel mViewModel = new ViewModelProvider(this).get(NotesViewModel.class);
     }
 
 }

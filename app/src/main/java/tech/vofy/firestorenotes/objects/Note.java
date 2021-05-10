@@ -5,22 +5,12 @@ import java.util.Map;
 
 public class Note {
 
-    public String title;
-    public String content;
-    public String lastModified;
+    private String title;
+    private String content;
+    private String lastModified;
 
     public Note() {
 
-    }
-
-    public Note(String title, String content) {
-        this.title = title;
-        this.content = content;
-    }
-
-    public void updateNote(String title, String content) {
-        this.title = title;
-        this.content = content;
     }
 
     public HashMap<String, Object> getHashMap() {
@@ -30,5 +20,29 @@ public class Note {
         noteMap.put("lastModified", lastModified);
 
         return noteMap;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setLastModified(String lastModified) {
+        this.lastModified = lastModified;
+    }
+
+    public String getLastModified() {
+        return lastModified;
     }
 }

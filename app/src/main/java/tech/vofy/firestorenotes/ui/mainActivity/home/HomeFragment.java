@@ -6,20 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.firestorenotes.R;
+import com.example.firestorenotes.databinding.HomeFragmentBinding;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        HomeFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment, container,false);
+        new ViewModelProvider(this).get(HomeViewModel.class);
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.home_fragment, container, false);
-        return root;
+        return binding.getRoot();
     }
 }

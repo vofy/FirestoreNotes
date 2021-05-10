@@ -9,11 +9,11 @@
             android:id="@+id/bottom_navigation_notes"
             android:name="tech.vofy.firestorenotes.ui.mainActivity.notes.NotesFragment"
             android:label="@string/title_notes"
-            tools:layout="@layout/main_notes_fragment" />
+            tools:layout="@layout/notes_fragment" />
         <fragment
             android:id="@+id/bottom_navigation_tasks"
             android:name="tech.vofy.firestorenotes.ui.mainActivity.notes.NotesFragment"
             android:label="@string/title_tasks"
-            tools:layout="@layout/main_notes_fragment" />
+            tools:layout="@layout/notes_fragment" />
 
 </navigation>
